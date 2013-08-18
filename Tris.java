@@ -474,7 +474,15 @@ public class Tris extends javax.swing.JFrame {
 
 	if(eseguita==false)
 	{
-		if(scacchiera[5]==0){r=5;}
+                if(scacchiera[1]==1 & scacchiera[6]==1){r=3;}
+                else if(scacchiera[1]==1 & scacchiera[8]==1){r=7;}
+                else if(scacchiera[3]==1 & scacchiera[4]==1){r=1;}
+                else if(scacchiera[3]==1 & scacchiera[8]==1){r=9;}
+                else if(scacchiera[7]==1 & scacchiera[2]==1){r=1;}
+                else if(scacchiera[7]==1 & scacchiera[6]==1){r=9;}
+                else if(scacchiera[9]==1 & scacchiera[4]==1){r=7;}
+                else if(scacchiera[9]==1 & scacchiera[2]==1){r=3;} 
+		else if(scacchiera[5]==0){r=5;}
 		else if(scacchiera[1]==0){r=1;}
 		else if(scacchiera[3]==0){r=3;}
 		else if(scacchiera[7]==0){r=7;}
