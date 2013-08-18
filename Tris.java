@@ -487,7 +487,6 @@ public class Tris extends javax.swing.JFrame {
 		else if(scacchiera[3]==0){r=3;}
 		else if(scacchiera[7]==0){r=7;}
 		else if(scacchiera[9]==0){r=9;}
-		
 		if((scacchiera[1]==1 & scacchiera[9]==1) || (scacchiera[3]==1 & scacchiera[7]==1))
 		{
 			while(r==1 || r==3 || r==7 || r==9)
