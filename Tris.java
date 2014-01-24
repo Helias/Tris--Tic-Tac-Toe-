@@ -441,57 +441,67 @@ public class Tris extends javax.swing.JFrame {
         int r=(int)((Math.random()*9)+1);
 	boolean eseguita=false;
 
-	for(int j=2; j>0; j--)
+	if(scacchiera[5] == 2 & scacchiera[6] == 1 & scacchiera[8] == 1)
 	{
-		//Orizzontali
-		for(int i=1; i<9; i+=3)
+		if(scacchiera[1] == 0 & scacchiera[2] == 0 & scacchiera[3] == 0 & scacchiera[4] == 0 & scacchiera[7] == 0 & scacchiera[9] == 0)
 		{
-			if(scacchiera[i]==0 & scacchiera[i+1]==j & scacchiera[i+2]==j){r=i; eseguita=true; break;}
-			if(scacchiera[i]==j & scacchiera[i+1]==0 & scacchiera[i+2]==j){r=i+1; eseguita=true; break;}
-			if(scacchiera[i]==j & scacchiera[i+1]==j & scacchiera[i+2]==0){r=i+2; eseguita=true; break;}
+			r = 9;
 		}
-		if(eseguita==true){break;}
-		
-		//Verticali
-		for(int i=1; i<4; i++)
-		{
-			if(scacchiera[i]==0 & scacchiera[i+3]==j & scacchiera[i+6]==j){r=i; eseguita=true; break;}
-			if(scacchiera[i]==j & scacchiera[i+3]==0 & scacchiera[i+6]==j){r=i+3; eseguita=true; break;}
-			if(scacchiera[i]==j & scacchiera[i+3]==j & scacchiera[i+6]==0){r=i+6; eseguita=true; break;}
-		}
-		if(eseguita==true){break;}
-
-		//Diagonali
-		if(scacchiera[1]==0 & scacchiera[5]==j & scacchiera[9]==j){r=1; eseguita=true; break;}
-		if(scacchiera[1]==j & scacchiera[5]==0 & scacchiera[9]==j){r=5; eseguita=true; break;}
-		if(scacchiera[1]==j & scacchiera[5]==j & scacchiera[9]==0){r=9; eseguita=true; break;}
-
-		//Diagonali inverse
-		if(scacchiera[3]==0 & scacchiera[5]==j & scacchiera[7]==j){r=3; eseguita=true; break;}
-		if(scacchiera[3]==j & scacchiera[5]==0 & scacchiera[7]==j){r=5; eseguita=true; break;}
-		if(scacchiera[3]==j & scacchiera[5]==j & scacchiera[7]==0){r=7; eseguita=true; break;}
 	}
-
-	if(eseguita==false)
+	else
 	{
-                if(scacchiera[1]==1 & scacchiera[6]==1){r=3;}
-                else if(scacchiera[1]==1 & scacchiera[8]==1){r=7;}
-                else if(scacchiera[3]==1 & scacchiera[4]==1){r=1;}
-                else if(scacchiera[3]==1 & scacchiera[8]==1){r=9;}
-                else if(scacchiera[7]==1 & scacchiera[2]==1){r=1;}
-                else if(scacchiera[7]==1 & scacchiera[6]==1){r=9;}
-                else if(scacchiera[9]==1 & scacchiera[4]==1){r=7;}
-                else if(scacchiera[9]==1 & scacchiera[2]==1){r=3;} 
-		else if(scacchiera[5]==0){r=5;}
-		else if(scacchiera[1]==0){r=1;}
-		else if(scacchiera[3]==0){r=3;}
-		else if(scacchiera[7]==0){r=7;}
-		else if(scacchiera[9]==0){r=9;}
-		if((scacchiera[1]==1 & scacchiera[9]==1) || (scacchiera[3]==1 & scacchiera[7]==1))
+		for(int j=2; j>0; j--)
 		{
-			while(r==1 || r==3 || r==7 || r==9)
+			//Orizzontali
+			for(int i=1; i<9; i+=3)
 			{
-				r=(int)((Math.random()*9)+1);
+				if(scacchiera[i]==0 & scacchiera[i+1]==j & scacchiera[i+2]==j){r=i; eseguita=true; break;}
+				if(scacchiera[i]==j & scacchiera[i+1]==0 & scacchiera[i+2]==j){r=i+1; eseguita=true; break;}
+				if(scacchiera[i]==j & scacchiera[i+1]==j & scacchiera[i+2]==0){r=i+2; eseguita=true; break;}
+			}
+			if(eseguita==true){break;}
+			
+			//Verticali
+			for(int i=1; i<4; i++)
+			{
+				if(scacchiera[i]==0 & scacchiera[i+3]==j & scacchiera[i+6]==j){r=i; eseguita=true; break;}
+				if(scacchiera[i]==j & scacchiera[i+3]==0 & scacchiera[i+6]==j){r=i+3; eseguita=true; break;}
+				if(scacchiera[i]==j & scacchiera[i+3]==j & scacchiera[i+6]==0){r=i+6; eseguita=true; break;}
+			}
+			if(eseguita==true){break;}
+	
+			//Diagonali
+			if(scacchiera[1]==0 & scacchiera[5]==j & scacchiera[9]==j){r=1; eseguita=true; break;}
+			if(scacchiera[1]==j & scacchiera[5]==0 & scacchiera[9]==j){r=5; eseguita=true; break;}
+			if(scacchiera[1]==j & scacchiera[5]==j & scacchiera[9]==0){r=9; eseguita=true; break;}
+	
+			//Diagonali inverse
+			if(scacchiera[3]==0 & scacchiera[5]==j & scacchiera[7]==j){r=3; eseguita=true; break;}
+			if(scacchiera[3]==j & scacchiera[5]==0 & scacchiera[7]==j){r=5; eseguita=true; break;}
+			if(scacchiera[3]==j & scacchiera[5]==j & scacchiera[7]==0){r=7; eseguita=true; break;}
+		}
+	
+		if(eseguita==false)
+		{
+	                if(scacchiera[1]==1 & scacchiera[6]==1){r=3;}
+	                else if(scacchiera[1]==1 & scacchiera[8]==1){r=7;}
+	                else if(scacchiera[3]==1 & scacchiera[4]==1){r=1;}
+	                else if(scacchiera[3]==1 & scacchiera[8]==1){r=9;}
+	                else if(scacchiera[7]==1 & scacchiera[2]==1){r=1;}
+	                else if(scacchiera[7]==1 & scacchiera[6]==1){r=9;}
+	                else if(scacchiera[9]==1 & scacchiera[4]==1){r=7;}
+	                else if(scacchiera[9]==1 & scacchiera[2]==1){r=3;} 
+			else if(scacchiera[5]==0){r=5;}
+			else if(scacchiera[1]==0){r=1;}
+			else if(scacchiera[3]==0){r=3;}
+			else if(scacchiera[7]==0){r=7;}
+			else if(scacchiera[9]==0){r=9;}
+			if((scacchiera[1]==1 & scacchiera[9]==1) || (scacchiera[3]==1 & scacchiera[7]==1))
+			{
+				while(r==1 || r==3 || r==7 || r==9)
+				{
+					r=(int)((Math.random()*9)+1);
+				}
 			}
 		}
 	}
